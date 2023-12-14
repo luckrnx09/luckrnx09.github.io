@@ -1,3 +1,8 @@
+(function (c, l, a, r, i, t, y) {
+  c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+  t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+  y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+})(window, document, "clarity", "script", "k5jo3bmjki");
 
 $('body').scrollspy({ target: '.navmenu' });
 
@@ -95,7 +100,7 @@ jQuery(document).ready(function ($) {
     });
     $('.skill-icons').append($type);
 
-    $.each(items, function (index, { url, width, height }) { 
+    $.each(items, function (index, { url, width, height }) {
       const $icon = $('<img />').attr('src', url)
         .attr('width', width)
         .attr('height', height)
