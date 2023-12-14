@@ -1,7 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900,300,900italic);
-*{
-  /* overflow-x: hidden; */
-}
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900,300,900italic);
+
 body {
   font-family: 'Lato', sans-serif;
   background: #fff;
@@ -695,7 +693,7 @@ img {
   padding: 20px 0;
 }
 #footer p {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 #footer a {
