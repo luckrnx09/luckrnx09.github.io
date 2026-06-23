@@ -106,7 +106,6 @@ jQuery(document).ready(function ($) {
       type: 'AI & Tools',
       items: [
         { url: 'assets/img/icons/claude-code.svg', width: 44 },
-        { url: 'assets/img/icons/ai-llm.svg', width: 44 },
       ]
     }
   ];

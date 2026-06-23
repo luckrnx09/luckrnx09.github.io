@@ -7,12 +7,12 @@
   --bg: #09090b;
   --bg-surface: #131316;
   --bg-card: rgba(255, 255, 255, 0.02);
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-hover: rgba(255, 255, 255, 0.06);
-  --text: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-hover: rgba(255, 255, 255, 0.08);
+  --text: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
   --accent: #22d3ee;
   --accent-hover: #67e8f9;
   --accent-glow: rgba(34, 211, 238, 0.12);
