@@ -371,6 +371,7 @@ section {
 
 /* Terminal Box */
 .terminal-box {
+  width: 100%;
   max-width: 620px;
   margin: 0 auto 40px;
   background: rgba(0, 0, 0, 0.35);
