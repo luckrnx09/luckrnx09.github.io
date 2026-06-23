@@ -115,165 +115,20 @@ section {
 }
 
 /* ============================================
-   Header / Navigation
+   Header
    ============================================ */
 #header {
   position: relative;
   z-index: 2;
 }
 
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 36px;
-}
-
-/* Logo */
-.logo-img {
-  width: 44px;
-  height: 44px;
+.header-avatar {
+  display: block;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid var(--border);
-  transition: border-color var(--transition), transform var(--transition);
-}
-
-.logo-img:hover {
-  border-color: var(--accent);
-  transform: scale(1.08);
-}
-
-/* Hamburger Menu Button */
-#menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: border-color var(--transition), background var(--transition);
-  z-index: 100001;
-  position: relative;
-}
-
-#menu:hover {
-  border-color: var(--accent);
-}
-
-#menu span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--text);
-  position: relative;
-  transition: background 0.15s ease;
-}
-
-#menu span::before,
-#menu span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--text);
-  transition: transform 0.3s ease;
-}
-
-#menu span::before {
-  transform: translateY(-6px);
-}
-
-#menu span::after {
-  transform: translateY(6px);
-}
-
-#menu:hover span,
-#menu:hover span::before,
-#menu:hover span::after {
-  background: var(--accent);
-}
-
-/* ============================================
-   Offcanvas Navigation (Jasny Bootstrap compatible)
-   ============================================ */
-.navmenu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 320px;
-  max-width: 85vw;
-  background: rgba(13, 13, 17, 0.97);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-left: 1px solid var(--border);
-  z-index: 100000;
-  padding: 80px 40px 40px;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-.navmenu.in {
-  transform: translateX(0);
-}
-
-/* Overlay when menu is open */
-.canvas-slid::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
-  pointer-events: auto;
-}
-
-.navmenu .logo-img {
-  width: 72px;
-  height: 72px;
-}
-
-.navmenu .nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-.navmenu .nav li {
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
-  transition: border-color var(--transition), background var(--transition);
-}
-
-.navmenu .nav li a {
-  display: block;
-  padding: 12px 20px;
-  color: var(--text-secondary);
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--font-mono);
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  transition: color var(--transition);
-}
-
-.navmenu .nav li:hover,
-.navmenu .nav li.active {
-  border-color: var(--border);
-  background: var(--glass-bg);
-}
-
-.navmenu .nav li:hover a,
-.navmenu .nav li.active a {
-  color: var(--text);
+  margin: 24px auto 0;
 }
 
 /* ============================================
@@ -839,12 +694,6 @@ section {
 }
 
 /* ============================================
-   Bootstrap Utility Classes (no longer loading bootstrap.css)
-   ============================================ */
-.pull-left { float: left !important; }
-.pull-right { float: right !important; }
-
-/* ============================================
    Utility: Scroll-triggered reveal (for WOW.js replacement)
    ============================================ */
 .reveal {
@@ -922,11 +771,6 @@ section {
 
   .section-header {
     margin-bottom: 40px;
-  }
-
-  .navmenu {
-    width: 100%;
-    max-width: 100%;
   }
 
   .project-body h3 {
