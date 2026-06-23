@@ -16,45 +16,56 @@ $('#menu').click(function () {
 var wow = new WOW({ mobile: true });
 wow.init();
 
-// Typewriter effect
+// Typewriter effect — cycles through messages separated by ||
 (function () {
-  var $lines = $('.typewriter-line');
-  if (!$lines.length) return;
+  var $line = $('.typewriter-line');
+  if (!$line.length) return;
 
-  var lineIndex = 0;
+  var messages = ($line.data('text') || '').split('||').filter(Boolean);
+  if (!messages.length) return;
+
+  var msgIndex = 0;
   var charIndex = 0;
   var isDeleting = false;
-  var currentLine = 0;
+  var started = false;
+  var $cursor = $('.terminal-body .cursor');
 
-  function typeLine() {
-    if (currentLine >= $lines.length) return;
-    var $line = $lines.eq(currentLine);
-    var text = $line.data('text') || '';
-    var speed = 40 + Math.random() * 40;
+  function tick() {
+    var currentText = messages[msgIndex];
 
     if (!isDeleting) {
-      $line.text(text.substring(0, charIndex + 1));
+      // Typing forward
+      $line.text(currentText.substring(0, charIndex + 1));
       charIndex++;
-      if (charIndex === text.length) {
-        currentLine++;
-        if (currentLine < $lines.length) {
-          setTimeout(typeLine, 400);
-        }
+      if (charIndex === currentText.length) {
+        // Finished typing — pause then start deleting
+        setTimeout(tick, 2000);
+        isDeleting = true;
         return;
       }
+      setTimeout(tick, 40 + Math.random() * 50);
+    } else {
+      // Deleting
+      $line.text(currentText.substring(0, charIndex - 1));
+      charIndex--;
+      if (charIndex === 0) {
+        // Finished deleting — move to next message
+        isDeleting = false;
+        msgIndex = (msgIndex + 1) % messages.length;
+        setTimeout(tick, 400);
+        return;
+      }
+      setTimeout(tick, 20 + Math.random() * 20);
     }
-    setTimeout(typeLine, speed);
   }
-
-  var $trigger = $('.typewriter-start');
-  var started = false;
 
   function startTypewriter() {
     if (started) return;
     started = true;
-    setTimeout(typeLine, 300);
+    setTimeout(tick, 300);
   }
 
+  var $trigger = $('.typewriter-start');
   $trigger.one('animationend', startTypewriter);
   // Fallback: start after 1.5s if animationend never fires
   setTimeout(startTypewriter, 1500);
