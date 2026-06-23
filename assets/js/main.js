@@ -4,14 +4,6 @@
   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
 })(window, document, "clarity", "script", "k5jo3bmjki");
 
-$('body').scrollspy({ target: '.navmenu' });
-
-// Offcanvas menu toggle
-$('#menu').click(function () {
-  $('#menu').not(this).removeClass("active");
-  $(this).toggleClass("active");
-});
-
 // WOW Scroll Spy
 var wow = new WOW({ mobile: true });
 wow.init();
@@ -137,11 +129,6 @@ $(function () {
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html,body').animate({ scrollTop: target.offset().top }, 800);
-        // Close offcanvas if open
-        if ($('.navmenu').hasClass('in')) {
-          $('.navmenu').removeClass('in');
-          $('body').removeClass('canvas-slid');
-        }
         return false;
       }
     }
